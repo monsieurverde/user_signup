@@ -5,10 +5,11 @@
         <style>
             .error {
                 color: red;
-            }
+            }mkdir
         </style>
     </head>
     <body>
+    <div>
     <h1>Signup</h1>
         <form method="post">
             <table>
@@ -43,5 +44,6 @@
             </table>
             <input type="submit">
         </form>
+         </div>
     </body>
 </html>
