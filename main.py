@@ -1,49 +1,14 @@
-<!DOCTYPE html>
+from flask import Flask, request, redirect, render_template
+import cgi
 
-<html>
-    <head>
-        <style>
-            .error {
-                color: red;
-            }mkdir
-        </style>
-    </head>
-    <body>
-    <div>
-    <h1>Signup</h1>
-        <form method="post">
-            <table>
-                <tr>
-                    <td><label for="username">Username</label></td>
-                    <td>
-                        <input name="username" type="text" value="">
-                        <span class="error"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="password">Password</label></td>
-                    <td>
-                        <input name="password" type="password">
-                        <span class="error"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="verify">Verify Password</label></td>
-                    <td>
-                        <input name="verify" type="password">
-                        <span class="error"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="email">Email (optional)</label></td>
-                    <td>
-                        <input name="email" value="">
-                        <span class="error"></span>
-                    </td>
-                </tr>
-            </table>
-            <input type="submit">
-        </form>
-         </div>
-    </body>
-</html>
+app = Flask(__name__)
+app.config['DEBUG'] = True
+
+
+@app.route("/", methods=['GET', 'POST'])
+def index():
+    if request.method == 'GET':
+        return render_template('signup.html')
+
+    return redirect('confirmation.html',user_name=request.get['user-name'])
+app.run()
