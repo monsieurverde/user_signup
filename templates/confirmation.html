@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<form action="/" method="POST">  
-<html>
-    <h1>Welcome {{ user_name }} .</h1>
-</html>
-</form>
+{% extends 'post.html' %}
+
+{% block content %}
+
+<h1>Welcome, {{username}}!</h1>
+
+{% endblock %}
