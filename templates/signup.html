@@ -1,48 +1,48 @@
 {% extends 'post.html' %}
 
 {% block content %}    
+   
+    <h1>User Sign-up</h1>      
     
-    <h1>User Sign-up</h1>
-            
     <table>
         <form action="/ " method='POST'>
-        <tr>
-            <td><label for="username">Username</label></td>
-            <td>
-                <input type="text" name="username"  value='{{username}}' />
-                <span class="error"></span>
-            </td>
-        </tr>
-    
-        <tr>
-            <td><label for="password">Password</label></td>
-            <td>
-                <input name="password" type="password"/>
-                <span class="error"></span>
-        </tr>
+            <tr>
+                <td><label for="username">Username</label></td>
+                <td>
+                    <input type="text" name="username"  value="{{username}}" required/>
+                    <p class="error">{{username_error}}</p>
+                </td>
+            </tr>
 
-        <tr>
-            <td><label for="verify">Verify Password</label></td>
-            <td>
-                <input name="verify" type="password">
-                <span class="error"Passwords do not match></span>
-            </td>
-        </tr>
+            <tr>
+                <td><label for="password">Password</label></td>
+                <td>
+                    <input name="password" type="password" value="{{password}}" required/>
+                    <p class="error">{{password_error}}</p>
+            </tr>
 
-        <tr>
-            <td><label for="email">Email (optional)</label></td>
-            <td>
-                <input name="email" value="">
-                <span class="error"Email is not valid></span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                <input class="submit" type="submit" value="Submit" />
-            </td>
-        </tr>
-            
+            <tr>
+                <td><label for="verify">Verify Password</label></td>
+                <td>
+                    <input name="verify" type="password" value="{{verify}}" required/>
+                    <p class="error">{{verify_error}}</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td>
+                    <input name="email" value="{{email}}" placeholder="(Optional)"/>
+                    <p class="error">{{email_error}}</p>
+          
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input class="submit" type="submit" value="Submit" />
+                </td>
+            </tr>
         </form>  
     </table>
   
